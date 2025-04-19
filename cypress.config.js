@@ -5,5 +5,7 @@ module.exports = defineConfig({
     setupNodeEvents(on, config) {
       // implement node event listeners here
     },
+    
+    baseurl: 'http://lojaebac.ebaconline.art.br/', 
   },
 });

@@ -16,9 +16,6 @@
   "bugs": {
     "url": "https://github.com/PedroLopesDev51/teste-ebac-ui/issues"
   },
-  "homepage": "https://github.com/PedroLopesDev51/teste-ebac-ui#readme",
-  "dependencies": {
-    "@faker-js/faker": "^8.3.1",
-    "cypress": "^13.6.0"
-  }
+  "homepage": "https://github.com/PedroLopesDev51/teste-ebac-ui#readme"
 }
+
