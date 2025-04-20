@@ -4,8 +4,8 @@ import { faker } from '@faker-js/faker';
 describe('Funcionalidade: Cadastro', () => {
 
     beforeEach(() => {
-        cy.visit('minha-conta')
-    });
+        cy.visit('minha-conta/')
+});
 
     it('Deve completar o cadastro com sucesso', () => {
         cy.get('#reg_email').type(faker.internet.email())

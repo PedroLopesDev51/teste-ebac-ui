@@ -4,7 +4,7 @@
 describe('funcionalidade: Produtos', () => {
    
     beforeEach(() => {
-        cy.visit('produtos')
+        cy.visit('produtos/')
     });
    
     it('Deve selecionar um produto da lista', () => {
