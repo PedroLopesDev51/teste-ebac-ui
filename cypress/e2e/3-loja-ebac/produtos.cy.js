@@ -1,24 +1,32 @@
 /// <reference types="cypress"/>
-
+import produtosPage from "../../support/page-objects/produtos.page";
 
 describe('funcionalidade: Produtos', () => {
    
     beforeEach(() => {
-        cy.visit('produtos/')
+        produtosPage.visitarUrl()
     });
    
     it('Deve selecionar um produto da lista', () => {
-        cy.get('.products > .row')
-            //.first()
-            //.last()
-            //.eq(2)
-        .contains('Aero Daily Fitness Tee')
-            .click()
-
-            cy.get('#tab-title-description > a') .should('contain', 'Descrição')
+            produtosPage.buscarProdutoLista('Aether Gym Pant')
+                 cy.get('#tab-title-description > a') .should('contain', 'Descrição')
 
         
     })
+
+    it.only('Deve buscar um produto com sucesso', () => {
+        produtosPage.buscarProduto('Aether Gym Pant')
+        cy.get('.product_title').should('contain', 'Aether Gym Pant')
+        
+    });
+
+    it('Deve visitar a pagina do produto', () => {
+        
+    });
+
+    it('Deve adicionar produto ao carrinho', () => {
+        
+    });
 });
 
 
