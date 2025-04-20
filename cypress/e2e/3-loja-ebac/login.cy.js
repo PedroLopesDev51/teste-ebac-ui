@@ -41,7 +41,7 @@ describe('Funcionalidade: Login', () => {
         cy.get('.woocommerce-MyAccount-content > :nth-child(2)').should('contain' , 'Olá, tezteebac ')        
     });
 
-    it.only('Deve fazer login com sucesso usando fixture', () => {
+    it('Deve fazer login com sucesso usando fixture', () => {
         cy.fixture('perfil').then( dados => {
             cy.get('#username').type(dados.usuario)
             cy.get('#password').type(dados.senha, { log:false }) // log false faz com que nao apareca o nome do usuario ou senha no teste
@@ -51,4 +51,12 @@ describe('Funcionalidade: Login', () => {
         })
         
     });
+
+    it.only('deve fazer login com sucesso -  usando comandos costumizado ', () => {
+        cy.login('tezteebac@gmail.com', '12345')
+        cy.get('.woocommerce-MyAccount-content > :nth-child(2)').should('contain' , 'Olá, tezteebac ')
+
+        
+    });
+
 });
