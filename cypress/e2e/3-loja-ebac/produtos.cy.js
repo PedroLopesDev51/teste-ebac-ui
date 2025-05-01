@@ -14,7 +14,7 @@ describe('funcionalidade: Produtos', () => {
         
     })
 
-    it.only('Deve buscar um produto com sucesso', () => {
+    it('Deve buscar um produto com sucesso', () => {
         produtosPage.buscarProduto('Aether Gym Pant')
         cy.get('.product_title').should('contain', 'Aether Gym Pant')
         

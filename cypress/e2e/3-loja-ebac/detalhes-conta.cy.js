@@ -13,7 +13,7 @@ describe('Funcionalidade: Detalhes da conta', () => {
     it('Deve completar detalhes da conta com sucesso', () => {
         cy.detalhesConta('Pedro', 'Lopes', 'Drope51')
         cy.get('.woocommerce-message').should('contain', 'Detalhes da conta modificados com sucesso.' )
-
+        
     });
     
 });

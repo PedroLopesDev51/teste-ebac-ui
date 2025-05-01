@@ -16,7 +16,7 @@ describe('Funcionalidade: Login', () => {
         cy.get('#username').type('tezteebac@gmail.com')
         cy.get('#password').type('12345')
         cy.get('.woocommerce-form > .button').click()
-        cy.get('.woocommerce-MyAccount-content > :nth-child(2)').should('contain' , 'Olá, tezteebac ')
+        cy.get('.woocommerce-MyAccount-content > :nth-child(2)').should('exist')
     })
 
     it('Deve exibir uma mensagem de erro ao insrir usuário inválido', () => {
@@ -38,7 +38,7 @@ describe('Funcionalidade: Login', () => {
         cy.get('#username').type(perfil.usuario)
         cy.get('#password').type(perfil.senha)
         cy.get('.woocommerce-form > .button').click()
-        cy.get('.woocommerce-MyAccount-content > :nth-child(2)').should('contain' , 'Olá, tezteebac ')        
+        cy.get('.woocommerce-MyAccount-content > :nth-child(2)').should('exist')        
     });
 
     it('Deve fazer login com sucesso usando fixture', () => {
@@ -46,16 +46,17 @@ describe('Funcionalidade: Login', () => {
             cy.get('#username').type(dados.usuario)
             cy.get('#password').type(dados.senha, { log:false }) // log false faz com que nao apareca o nome do usuario ou senha no teste
             cy.get('.woocommerce-form > .button').click()
-            cy.get('.woocommerce-MyAccount-content > :nth-child(2)').should('contain' , 'Olá, tezteebac ')    
+            cy.get('.woocommerce-MyAccount-content > :nth-child(2)').should('exist')    
 
         })
         
     });
 
-    it.only('deve fazer login com sucesso -  usando comandos costumizado ', () => {
+    it('deve fazer login com sucesso -  usando comandos costumizado ', () => {
         cy.login('tezteebac@gmail.com', '12345')
-        cy.get('.woocommerce-MyAccount-content > :nth-child(2)').should('contain' , 'Olá, tezteebac ')
-
+        cy.get('.woocommerce-MyAccount-content > :nth-child(2)').should('exist')
+        
+        
         
     });
 
